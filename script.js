@@ -9,7 +9,7 @@ function start() {
         numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
      }
 }
-// start();
+start();
 
 let personalMovieDB = {
     count: numberOfFilms,
@@ -21,9 +21,9 @@ let personalMovieDB = {
 
     function remenberMyFilms(){
         for (let i = 0; i < 2; i++){
-            const a = prompt('Один из последних просмотренных фильмов?', ''),
+            const a = prompt('Один из последних просмотренных фильмов?', '').trim(),
                   b = prompt('На сколько оцените его?', '');
-        
+
                   if (a != '' && b != '' && a.length < 50 && a != null && b != null){
                     personalMovieDB.movies[a] = b;
                     console.log('done!');
@@ -32,7 +32,7 @@ let personalMovieDB = {
                 }
             }
     }
-    // remenberMyFilms();
+    remenberMyFilms();
 
     function detectPersonalLevel(){
         if (personalMovieDB.count < 10){
@@ -43,7 +43,7 @@ let personalMovieDB = {
             console.log('Киноман');
         } else {console.log('Error');}
     }
-    // detectPersonalLevel();
+    detectPersonalLevel();
 
     function showMyDB (){
         if (personalMovieDB.privat == false){
@@ -59,5 +59,3 @@ let personalMovieDB = {
         }
     }
     writeYourGenres();
-    
-    // console.log(personalMovieDB);
